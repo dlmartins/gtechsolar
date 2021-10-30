@@ -1,10 +1,18 @@
-import style from "./Logo.module.css";
+import style from "./Logo.module.css"
+import Image from 'next/image'
 
 
-export default (props) => (
-  <aside className={style.logo}>
-      <img src="../../public/imgs/gtech-logo-final-04.png" alt="logo" />
-    {/* <Link to="/" className={style.logo}>
-    </Link> */}
-  </aside>
-);
+
+export default function Logo(props) {
+  return (
+    <aside className={style.logo}>
+      <Image
+        src="/imgs/gtech-logo-final-04.png"
+        alt="logo"
+        width={230}
+        height={50}></Image>
+    </aside>
+  )
+}
+
+

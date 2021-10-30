@@ -11,7 +11,7 @@
 }
 
 @media (max-width: 576px) {
-  .logo img {
+  .img {
     width: 350px;
   }
 }

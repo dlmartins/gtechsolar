@@ -1,14 +1,19 @@
-import "./Nav.module.css";
+import style from "./Nav.module.css";
+import Link from 'next/link'
 
-export default (props) => (
-  <aside className="menu-area">
-    <nav className="menu">
-      {/* <Link to="#">
-        <i className="fa fa-home"></i> Início
-      </Link>
-      <Link to="#">
-        <i className="fa fa-users"></i> Usuários
-      </Link> */}
+export default function Nav (props) {
+  return (
+  <aside className={style.area}>
+    <nav className={style.menu}>
+
+        <Link href="/Home">
+          <a>Início</a>
+        </Link>
+
+        <Link href="/Cadastro">
+          <a>Cadastro</a>
+        </Link>
     </nav>
   </aside>
-);
+  )
+}
