@@ -1,8 +1,5 @@
-import Head from "next/head"
-import App from "./App";
+import Layout from "./Layout";
 
-export default function Index (){
-  return(
-    <App></App>
-  )
+export default function Index(props) {
+  return <Layout></Layout>;
 }

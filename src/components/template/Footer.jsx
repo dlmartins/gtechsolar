@@ -4,7 +4,7 @@ export default function Footer () {
     return (
         <footer className={style.footer}>
         <span>
-            Desenvolvido Diego Luis Martins
+            Desenvolvido por Diego Luis Martins
         </span>
     </footer>
     )
