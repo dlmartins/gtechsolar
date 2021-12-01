@@ -1,0 +1,17 @@
+.aside {
+  display: flex;
+  background-color: #f6f7ef;
+  flex-direction: row;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  position: relative;
+  margin: 0;
+}
+
+.image {
+  object-fit: cover;
+}
