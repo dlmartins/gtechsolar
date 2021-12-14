@@ -4,7 +4,7 @@ export default function DadosPessoais() {
       <h2>Dados Pessoais</h2>
       <hr />
       <form action="">
-        <div className="form-group">
+        <div className="form-group col-6">
           <label htmlFor="">Nome Completo</label>
           <input
             type="text"
@@ -13,7 +13,7 @@ export default function DadosPessoais() {
           />
         </div>
         <div className="conteiner">
-          <div className="row">
+          {/* <div className="row">
             <div className="form-group col-6">
               <label htmlFor="">Endereço</label>
               <input
@@ -38,9 +38,9 @@ export default function DadosPessoais() {
                 placeholder="Complemento"
               />
             </div>
-          </div>
+          </div> */}
           <div className="row">
-            <div className="form-group col-3">
+            {/* <div className="form-group col-3">
               <label htmlFor="">CEP</label>
               <input
                 type="text"
@@ -55,8 +55,8 @@ export default function DadosPessoais() {
                 className="form-control"
                 placeholder="Bairro"
               />
-            </div>
-            <div className="form-group col-4">
+            </div> */}
+            <div className="form-group col-5">
               <label htmlFor="">Cidade</label>
               <input
                 type="text"
@@ -73,14 +73,14 @@ export default function DadosPessoais() {
             </div>
           </div>
           <div className="row">
-            <div className="form-group col-3">
+            {/* <div className="form-group col-3">
               <label htmlFor="">Telefone</label>
               <input
                 type="text"
                 className="form-control"
                 placeholder="Telefone Residencial"
               />
-            </div>
+            </div> */}
             <div className="form-group col-3">
               <label htmlFor="">Celular</label>
               <input
@@ -89,14 +89,14 @@ export default function DadosPessoais() {
                 placeholder="Telefone Celular"
               />
             </div>
-            <div className="form-group col-6">
+            {/* <div className="form-group col-6">
               <label htmlFor="">E-Mail</label>
               <input
                 type="text"
                 className="form-control"
                 placeholder="E-Mail para contato"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </form>
