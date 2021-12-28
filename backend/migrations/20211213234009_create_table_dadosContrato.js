@@ -1,3 +1,4 @@
+const knex = require("../config/db");
 
 exports.up = function(knex, Promise) {
   

@@ -5,7 +5,7 @@ exports.up = function (knex, Promise) {
     table.increments("id").primary();
     table.string("name").notNull();
     table.string("cidade").notNull();
-    table.number("estado").notNull();
+    table.string("estado").notNull();
     table.string("telefone").notNull();
   });
 };
