@@ -3,10 +3,11 @@ const knex = require("../config/db");
 exports.up = function (knex, Promise) {
   return knex.schema.createTable("contaluz", (table) => {
     table.increments("id").primary();
-    table.integer("Uc");
-    table.string("clase");
-    table.integer("valorKwh").notNull();
-    table.integer("valorIp").notNull();
+    table.integer("userId").references("id").inTable("clients");
+    table.integer("uc");
+    table.string("classe");
+    table.integer("valorKwh");
+    table.integer("valorIp");
     table.integer("jan").notNull();
     table.integer("fev").notNull();
     table.integer("mar").notNull();
@@ -19,10 +20,23 @@ exports.up = function (knex, Promise) {
     table.integer("out").notNull();
     table.integer("nov").notNull();
     table.integer("dez").notNull();
-    table.integer("userId").references("id").inTable("clients");
+    table.boolean("ponta").notNull();
+    table.integer("valorKwhPonta");
+    table.integer("janP");
+    table.integer("fevP");
+    table.integer("marP");
+    table.integer("abrP");
+    table.integer("maiP");
+    table.integer("junP");
+    table.integer("julP");
+    table.integer("agoP");
+    table.integer("setP");
+    table.integer("outP");
+    table.integer("novP");
+    table.integer("dezP");
   });
 };
 
 exports.down = function (knex, Promise) {
-  return knex.schema.droptable("contaluz");
+  return knex.schema.dropTable("contaluz");
 };
