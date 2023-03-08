@@ -8,8 +8,20 @@ consign()
   .then("./config/middlewares.js")
   .then("./api/validation.js")
   .then("./api")
+  //.then("./api/calcConsumoTotal.js")
   .then("./config/routes.js")
   .into(app);
+
+// calculate total consumption for user with id 1
+async function main() {
+  const calculateTotalConsumption = app.api.calcConsumoTotal.calculateTotalConsumption;
+  const totalConsumption = await calculateTotalConsumption(1238);
+  console.log(totalConsumption.toLocaleString('en-US', {maximumFractionDigits: 2}).replace(/,/g, ''));
+}
+
+main().catch((err) => {
+  console.error(err);
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

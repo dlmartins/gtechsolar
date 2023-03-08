@@ -1,9 +1,11 @@
-const knex = require("../config/db");
-
+/**
+ * @param { import("knex").Knex } knex
+ * @returns { Promise<void> }
+ */
 exports.up = function (knex, Promise) {
   return knex.schema.createTable("clients", (table) => {
     table.increments("id").primary();
-    table.string("controlNum").notNull();
+    table.string('controlNum').unique().notNullable();
     table.string("name").notNull();
     table.string("state").notNull();
     table.string("city").notNull();

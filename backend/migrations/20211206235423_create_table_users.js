@@ -1,5 +1,7 @@
-const knex = require("../config/db");
-
+/**
+ * @param { import("knex").Knex } knex
+ * @returns { Promise<void> }
+ */
 exports.up = function (knex, Promise) {
   return knex.schema.createTable("users", (table) => {
     table.increments("id").primary();
@@ -9,7 +11,11 @@ exports.up = function (knex, Promise) {
     table.boolean("admin").notNull().defaultTo(false);
   });
 };
-
+/**
+* @param { import("knex").Knex } knex
+* @returns { Promise<void> }
+*/
 exports.down = function (knex, Promise) {
   return knex.schema.dropTable("users");
 };
+

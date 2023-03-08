@@ -1,9 +1,13 @@
-const knex = require("../config/db");
-
+/**
+ * @param { import("knex").Knex } knex
+ * @returns { Promise<void> }
+ */
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('proposta', table => {
       table.increments('id').primary()
-      table.string('name').notNull()
+      table.string('userId').unsigned().notNullable();
+      table.foreign('userId').references('controlNum').inTable('clients');
+      table.string('rev').notNull()
       table.integer('Uc').notNull()
       table.integer('potSistema').notNull()
       table.string('qtModulos').notNull()
@@ -16,11 +20,13 @@ exports.up = function(knex, Promise) {
       table.string('valAnualAntes').notNull()
       table.string('valAnualDepois').notNull()
       table.string('valorTotal').notNull()
-      
-
   })
 };
 
+/**
+* @param { import("knex").Knex } knex
+* @returns { Promise<void> }
+*/
 exports.down = function (knex, Promise) {
   return knex.schema.dropTable("proposta");
 };

@@ -1,41 +1,49 @@
-const knex = require("../config/db");
-
+/**
+ * @param { import("knex").Knex } knex
+ * @returns { Promise<void> }
+ */
 exports.up = function (knex, Promise) {
   return knex.schema.createTable("contaluz", (table) => {
     table.increments("id").primary();
-    table.integer("userId").references("id").inTable("clients");
-    table.integer("uc");
+    table.string('userId').unsigned().notNullable();
+    table.foreign('userId').references('controlNum').inTable('clients');
+    table.string("uc");
     table.string("classe");
-    table.integer("valorKwh");
-    table.integer("valorIp");
-    table.integer("jan").notNull();
-    table.integer("fev").notNull();
-    table.integer("mar").notNull();
-    table.integer("abr").notNull();
-    table.integer("mai").notNull();
-    table.integer("jun").notNull();
-    table.integer("jul").notNull();
-    table.integer("ago").notNull();
-    table.integer("set").notNull();
-    table.integer("out").notNull();
-    table.integer("nov").notNull();
-    table.integer("dez").notNull();
+    table.string("valorKwh");
+    table.string("valorIp");
+    table.string("jan").notNull();
+    table.string("fev").notNull();
+    table.string("mar").notNull();
+    table.string("abr").notNull();
+    table.string("mai").notNull();
+    table.string("jun").notNull();
+    table.string("jul").notNull();
+    table.string("ago").notNull();
+    table.string("set").notNull();
+    table.string("out").notNull();
+    table.string("nov").notNull();
+    table.string("dez").notNull();
     table.boolean("ponta").notNull();
-    table.integer("valorKwhPonta");
-    table.integer("janP");
-    table.integer("fevP");
-    table.integer("marP");
-    table.integer("abrP");
-    table.integer("maiP");
-    table.integer("junP");
-    table.integer("julP");
-    table.integer("agoP");
-    table.integer("setP");
-    table.integer("outP");
-    table.integer("novP");
-    table.integer("dezP");
+    table.string("valorKwhPonta");
+    table.string("janP");
+    table.string("fevP");
+    table.string("marP");
+    table.string("abrP");
+    table.string("maiP");
+    table.string("junP");
+    table.string("julP");
+    table.string("agoP");
+    table.string("setP");
+    table.string("outP");
+    table.string("novP");
+    table.string("dezP");
   });
 };
+
+/**
+* @param { import("knex").Knex } knex
+* @returns { Promise<void> }
+*/
 
 exports.down = function (knex, Promise) {
   return knex.schema.dropTable("contaluz");
