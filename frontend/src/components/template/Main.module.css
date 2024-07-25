@@ -1,4 +1,26 @@
 .main {
-    background-color: rgb(241, 241, 241);
-    box-shadow: 0px 0px 15px #0004;
-}
+   background-color: rgb(241, 241, 241);
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0px 0px 15px #0004; 
+   height: calc(100vh - 120px); /* Altura da tela menos header e footer */
+   overflow-y: auto; 
+ }
+ 
+ .container-fluid {
+   height: 100vh;
+   padding-top: 60px; /* Espaço para o header */
+   padding-left: 250px; /* Espaço para a logo */
+   padding-bottom: 60px; /* Espaço para o footer */
+   display: flex;
+   flex-direction: column;
+ }
+ 
+ .p-3 {
+   padding: 1rem !important;
+ }
+ 
+ .mt-3 {
+   margin-top: 1rem !important; 
+ }
+ 

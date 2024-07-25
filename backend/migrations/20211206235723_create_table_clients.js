@@ -5,7 +5,7 @@
 exports.up = function (knex, Promise) {
   return knex.schema.createTable("clients", (table) => {
     table.increments("id").primary();
-    table.string('controlNum').unique().notNullable();
+    table.string('control_num').unique().notNullable();
     table.string("name").notNull();
     table.string("state").notNull();
     table.string("city").notNull();

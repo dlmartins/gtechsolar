@@ -1,7 +1,7 @@
 import DadosFatura from "../components/DadosFatura";
 import DadosPessoais from "../components/DadosPessoais";
 import Main from "../components/template/Main";
-import Layout from "./Layout";
+import Layout from "../components/Layout";
 
 export default function Home() {
   return (

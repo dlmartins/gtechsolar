@@ -21,10 +21,10 @@ export default function Sidebar() {
 
   return (
     <div className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>
-      {/* <button className="toggle-btn" onClick={toggleSidebar}>
+      <button className="toggle-btn" onClick={toggleSidebar}>
         {isCollapsed ? 'Expandir' : 'Recolher'}
-      </button> */}
-      {/* <img src="/imgs/gtech-logo-final-04.png" alt="Logo" /> */}
+      </button>
+      <img src="/imgs/gtech-logo-final-04.png" alt="Logo" />
       <h2 style={{ display: isCollapsed ? 'none' : 'block' }}>Menu</h2>
       <Link href="/Dashboard">
         <a style={{ opacity: isCollapsed ? 0 : 1 }}>Dashboard</a>

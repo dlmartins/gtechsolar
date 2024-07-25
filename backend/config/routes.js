@@ -1,4 +1,6 @@
 module.exports = (app) => {
+  app.route("/signin").post(app.api.auth.signin);
+
   app.route("/users").post(app.api.user.save).get(app.api.user.get);
 
   app
@@ -9,32 +11,24 @@ module.exports = (app) => {
 
   app.route("/clients").post(app.api.clients.save).get(app.api.clients.get);
 
-  app
-    .route("/clients/:id")
-    .put(app.api.clients.save)
-    .get(app.api.clients.getById)
-    .delete(app.api.clients.remove);
+  app.route("/clients/nextControlNum").get(app.api.clients.nextControlNum);
+
+  app.route("/clients/search").get(app.api.clients.getByName);
+
+  app.route("/clients/:control_num").get(app.api.clients.getByControlNum);
 
   app.route("/contaluz").post(app.api.contaluz.save).get(app.api.contaluz.get);
 
   app
-    .route("/contaluz/:userId")
+    .route("/contaluz/:clientId")
     .put(app.api.contaluz.save)
-    .get(app.api.contaluz.getByUserId)
-    .delete(app.api.contaluz.remove);
-
-  app.route("/proposta").post(app.api.proposta.save).get(app.api.proposta.get);
+    .get(app.api.contaluz.getByClientId);
 
   app
-    .route("/proposta/:userId")
-    .put(app.api.proposta.save)
-    .get(app.api.proposta.getById)
-    .delete(app.api.proposta.remove);
+    .route("/contaluz/calculate/:clientId")
+    .get(app.api.calcConsumoTotal.calculateMediaEValores);
 
-  app.get("/consumption/:userId", async (req, res) => {
-    const userId = req.params.userId;
-    const totalConsumption =
-      await app.api.calcConsumoTotal.calculateTotalConsumption(userId);
-    res.json({ totalConsumption });
-  });
+    app
+    .route("/contaluz/calculate/:clientId/:uc")
+    .get(app.api.calcConsumoTotal.calculateMediaUc);
 };

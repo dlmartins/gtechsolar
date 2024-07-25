@@ -2,11 +2,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import Style from "../styles/App.module.css";
 
-import Footer from "../components/template/Footer";
-import Header from "../components/template/Header";
-import Logo from "../components/template/Logo";
-import Main from "../components/template/Main";
-import Nav from "../components/template/Nav";
+import Footer from "./template/Footer";
+import Header from "./template/Header";
+import Logo from "./template/Logo";
+import Main from "./template/Main";
+import Nav from "./template/Nav";
 
 export default function Layout(props) {
   return (

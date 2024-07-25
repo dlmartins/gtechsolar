@@ -15,10 +15,15 @@
     "static/development/_middlewareManifest.js"
   ],
   "pages": {
-    "/Cadastro": [
+    "/Clients": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Cadastro.js"
+      "static/chunks/pages/Clients.js"
+    ],
+    "/NewClient": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/NewClient.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",
